@@ -83,15 +83,8 @@ def on_close():
 if __name__ == "__main__":
     top = Tk()
     top.title("ModBus Control")
-    top.geometry("420x300")
+    top.geometry("350x300")
 
-    Label(top, text="Set Percentage (%):", font="Courier 10").pack(pady=10)
-    percentage_entry = Entry(top, width=20)
-    percentage_entry.pack(pady=10)
-    Button(top, text="Apply", command=lambda: apply_percentage(percentage_entry.get())).pack(pady=10)
-    Button(top, text="Apply to All", command=lambda: apply_percentage_to_all(percentage_entry.get())).pack(pady=10)
-
-    # Create slave selection buttons
     frame1 = Frame(top)
     frame1.pack(pady=10)
     frame2 = Frame(top)
@@ -101,6 +94,15 @@ if __name__ == "__main__":
         button = Button(frame, text=name, command=lambda i=i: set_slave_address(i, i))
         button.pack(side=LEFT, padx=2)
         button_references.append(button)
+
+    Label(top, text="Set Percentage (%):", font="Courier 10").pack(pady=10)
+    percentage_entry = Entry(top, width=20)
+    percentage_entry.pack(pady=10)
+    Button(top, text="Apply", command=lambda: apply_percentage(percentage_entry.get())).pack(pady=10)
+    Button(top, text="Apply to All", command=lambda: apply_percentage_to_all(percentage_entry.get())).pack(pady=10)
+
+    # Create slave selection buttons
+
 
     top.protocol("WM_DELETE_WINDOW", on_close)
     top.mainloop()
