@@ -6,6 +6,9 @@ A simple GUI application for controlling Modbus devices. This tool allows you to
 
 - **Connection Management**: Connect to a Modbus server using a specified IP address.
 - **Slave Interaction**: Selectively apply a percentage value to individual or all connected Modbus slave devices.
+- **Automatic Control**: Enable automatic brightness adjustment based on external data fetched from a remote server.
+- **Power Monitoring**: Display real-time power consumption for each slave device.
+- **WhatsApp Notifications**: Send notifications via WhatsApp when specific conditions are met.
 - **User Feedback**: Dynamically highlight the selected slave device in the GUI.
 - **Error Handling**: Manage connection issues and validate user input effectively.
 
@@ -13,10 +16,13 @@ A simple GUI application for controlling Modbus devices. This tool allows you to
 
 Before you begin, ensure you have met the following requirements:
 - Python 3.x installed on your system.
-- pymodbus library installed. You can install it via pip:
+- Required libraries installed. You can install them via pip:
 
 ```
 pip install pymodbus
+pip install requests
+pip install logging
+pip install functools
 ```
 
 ## Installation
@@ -41,6 +47,7 @@ python main.py
 3. Select a slave device to interact with from the list.
 4. Enter a percentage value to apply to the selected slave or all slaves.
 5. Click "Apply" to send the command to the selected slave, or "Apply to All" to broadcast the command to all slaves.
+6. Optionally, enable automatic control by clicking the "Automatic Control" button to adjust brightness based on external data.
 
 ## Customization
 
@@ -58,4 +65,3 @@ This project is licensed under the MIT License - see the LICENSE file in the rep
 
 - Thanks to the pymodbus library for providing a comprehensive Modbus communication solution.
 - This project was inspired by the need for a simple, educational tool for understanding Modbus protocols.
-
