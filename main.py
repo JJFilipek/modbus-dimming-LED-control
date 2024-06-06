@@ -386,8 +386,8 @@ class ModbusApp:
         base_percentages = [100, 80, 60, 40, 20]  # Base interpolate values
         linear_import = self.fetch_and_parse(9, 1)
         linear_export = self.fetch_and_parse(10, 1)
-        linear_import_limit = float(self.fetch_and_parse(9, 3).replace(',', '.')) * 1000  # change MW vlaue to kW
-        linear_export_limit = float(self.fetch_and_parse(10, 3).replace(',', '.')) * 1000  # change MW vlaue to kW
+        linear_import_limit = float(self.fetch_and_parse(9, 3).replace(',', '.')) * 1000  # change MW value to kW
+        linear_export_limit = float(self.fetch_and_parse(10, 3).replace(',', '.')) * 1000  # change MW value to kW
         while self.auto_control:
             # Check conditions to adjust settings before processing slaves
             reduce_percentage = False
